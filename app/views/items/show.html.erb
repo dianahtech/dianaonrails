@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @item.name %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @item.weight %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @item.value %>
+</p>
+
+<p>
+  <strong>Avaiable:</strong>
+  <%= @item.avaiable %>
+</p>
+
+<p>
+  <strong>Durl:</strong>
+  <%= @item.durl %>
+</p>
+
+<p>
+  <strong>Ean:</strong>
+  <%= @item.ean %>
+</p>
+
+<p>
+  <strong>Offer:</strong>
+  <%= @item.offer %>
+</p>
+
+<p>
+  <strong>Buy limit:</strong>
+  <%= @item.buy_limit %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
