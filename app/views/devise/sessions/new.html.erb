@@ -1,44 +1,44 @@
 
-<div class="d-flex align-items-center" style="height: 600px; background-color: rgba(255,0,0,0.1);">
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <div class="col-md-5 p-lg-5 mx-auto my-2">
 
-<div class="card w-25  text-center mx-auto " >
+  <div class="card"  >
 
-<div class="card-header pt-2">
-<h2>Log in</h2>
-</div>
+    <div class="card">
+      <div class="card-header pt-2">
+        <h2>Log in</h2>
+      </div>
 
-<div class="card-body" >
+      <div class="card-body" >
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field form-group mb-2">
+               <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email" %>
+            </div>
+            
+            <div class="field form-group mb-2">
+              <%= f.password_field :password, autocomplete: "current-password", class:"form-control", placeholder:"Password" %>
+            </div>          
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  
-  <div class="field form-group"> 
-     <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email" %>
+            <% if devise_mapping.rememberable? %>
+            <div class="field form-group mb-2">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+            
+            <% end %>
+
+            <div class="actions">
+            <%= f.submit "Entrar", class:"btn btn-secondary btn-lg btn-block"   %>
+
+            </div>
+          <% end %>
+          <%= render "devise/shared/links" %>
+      </div>
   </div>
-
-   <br/>
-
-  <div class="field form-group">
-    <%= f.password_field :password, autocomplete: "current-password", class:"form-control", placeholder:"Password" %>
-  </div>
-
-   <br/>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field form-group">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-    <br/>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in", class:"btn btn-secondary"  %>
     
   </div>
-<% end %>
+      <div class="product-device box-shadow d-none d-md-block"></div>
+      <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+</div>
 
-<%= render "devise/shared/links" %>
 
-</div>
-</div>
-</div>
