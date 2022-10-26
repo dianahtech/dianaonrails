@@ -8,6 +8,9 @@ class ItemsController < ApplicationController
 
   # GET /items/1 or /items/1.json
   def show
+    item = Item.where(user_id: params[:id])    
+    #item = Item.where(params[:user_id])    
+    render json: {status: 'SUCCESS', message: 'Itens encontrados', data: item}, status: :ok
   end
 
   # GET /items/new
