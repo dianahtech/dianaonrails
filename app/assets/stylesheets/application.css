@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+.letters {
+    font-family: Times, "Times New Roman", Georgia, serif;
+}
+

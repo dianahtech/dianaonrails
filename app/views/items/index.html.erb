@@ -1,44 +1,60 @@
 
-<div class="card mx-auto text-center"> 
+<div class="container-fluid mx-auto text-center m-1"> 
 
-<h1>Items</h1>
+<div class="w-500">
+      <h1 class="letters">Items</h1>
+      
+      <table class="table table-bordered w-500">
+        <thead >
+          <tr>
+            <th>Name</th>
+            <th>Weight</th>
+            <th>Value</th>
+            <th>Avaiable</th>
+            <th>Durl</th>
+            <th>Ean</th>
+            <th>Offer</th>
+            <th>Buy limit</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<table class="table table-striped table-bordered table-hover ">
-  <thead class="table-dark">
-    <tr>
-      <th>Name</th>
-      <th>Weight</th>
-      <th>Value</th>
-      <th>Avaiable</th>
-      <th>Durl</th>
-      <th>Ean</th>
-      <th>Offer</th>
-      <th>Buy limit</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <tbody>
+          <% @items.each do |item| %>
+            <tr>
+              <td><%= item.name %></td>
+              <td><%= item.weight %></td>
+              <td><%= item.value %></td>
 
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td><%= item.name %></td>
-        <td><%= item.weight %></td>
-        <td><%= item.value %></td>
-        <td><%= item.avaiable %></td>
-        <td><%= item.durl %></td>
-        <td><%= item.ean %></td>
-        <td><%= item.offer %></td>
-        <td><%= item.buy_limit %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
+               <% if item.avaiable %>
+                  <td class="table-success"><%= item.avaiable %></td>
+              <% else %>
+                   <td class="table-danger"><%= item.avaiable %></td>
+              <% end %>
 
-<%= link_to 'ADICIONAR ITEM', new_item_path, class:"btn btn-secondary" %>
 
+
+
+             
+              <td><%= item.durl %></td>
+              <td><%= item.ean %></td>
+              
+              <% if item.offer %>
+                  <td class="table-success"><%= item.offer %></td>
+              <% else %>
+                  <td><%= item.offer %></td>
+              <% end %>
+
+              <td><%= item.buy_limit %></td>
+              <td><%= link_to 'Show', item %></td>
+              <td><%= link_to 'Edit', edit_item_path(item) %></td>
+              <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= link_to 'ADICIONAR ITEM', new_item_path, class:"btn btn-secondary" %>
+
+</div>
 </div>

@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">     
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-5 py-1">     
       
-      <a class="navbar-brand" href="/">Diana</a>
+      <a class="letters navbar-brand" href="/">DIANA</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
       </button> 
@@ -9,7 +9,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">         
 
         <li class="nav-item">      
-        <%= link_to 'About us', home_about_path, class:"nav-link"%>        
+        <%= link_to 'Quem somos', home_about_path, class:"nav-link"%>        
         </li> 
 
         <% if user_signed_in? %>
@@ -19,22 +19,18 @@
           </li>      
 
           <li class="nav-item">
-        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:"nav-link"%>        
-          </li> 
-
-          <li class="nav-item">
-        <%= link_to 'Edit Profile', edit_user_registration_path, class:"nav-link"%>        
-          </li> 
+        <%= link_to 'Sair', destroy_user_session_path, method: :delete, class:"nav-link"%>        
+          </li>     
 
 
       <% else %>
 
         <li class="nav-item">
-      <%= link_to 'Sign Up', new_user_registration_path, class:"nav-link"%>        
+      <%= link_to 'Cadastrar', new_user_registration_path, class:"nav-link"%>        
         </li> 
 
         <li class="nav-item">
-      <%= link_to 'Sign In', new_user_session_path, class:"nav-link"%>        
+      <%= link_to 'Entrar', new_user_session_path, class:"nav-link"%>        
         </li> 
 
       <% end %>
@@ -42,8 +38,8 @@
       </ul>
 
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input class="form-control me-2" type="search" placeholder="Procurar..." aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
       </form>
     </div>
 
