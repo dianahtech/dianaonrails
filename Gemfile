@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem 'react-rails'
 ruby '3.0.3'
 gem 'devise', '~> 4.8'
 gem 'rails', '~> 6.1.7'
