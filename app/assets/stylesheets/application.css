@@ -14,6 +14,7 @@
  *= require_self
  */
 .letters {
-    font-family: Times, "Times New Roman", Georgia, serif;
+    font-family: 'diogenes';
+    src: url('diogenes.ttf');
 }
 
