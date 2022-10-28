@@ -7,7 +7,7 @@ class HomeController < ApplicationController
     #   call  "" <%=  @this_variable %>  " in any view/place
     def about
   
-      @about_me = 'My name is ian very harders'
+      @about_me = 'My nme is ian very harders'
   
       @answer = 2+2
   
