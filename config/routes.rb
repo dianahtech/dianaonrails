@@ -8,5 +8,5 @@ Rails.application.routes.draw do
 
     root 'home#about'
   
-  # For details on the DSL available withithis file, see https://guides.rubyonrails.org/routing.html
+  # For details on the DSL available withithis fil, see https://guides.rubyonrails.org/routing.html
 end
