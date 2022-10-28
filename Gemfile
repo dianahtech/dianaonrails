@@ -19,7 +19,7 @@ group :development, :test do
 end
 
 group :development do
-  
+  gem "letter_opener", "~> 1.8"
   gem 'web-console', '>= 4.1.0'  
   gem 'rack-mini-profiler', '~> 2.0'
 end
@@ -33,3 +33,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "devise_token_auth", "~> 1.2"
+
+
+gem "active_model_serializers", "~> 0.10.13"
