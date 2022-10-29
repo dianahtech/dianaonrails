@@ -8,6 +8,10 @@ Bundler.require(*Rails.groups)
 
 module DianaOnRails
   class Application < Rails::Application
+
+    config.load_defaults 6.1
+
+
     config.middleware.use Rack::Cors do
       allow do
         origins '*'
@@ -18,7 +22,7 @@ module DianaOnRails
       end
     end
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.1
+    
 
     # Configuration for the application, engines, and railties goes here.
     #

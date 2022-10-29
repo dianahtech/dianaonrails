@@ -30,13 +30,14 @@ class DeviseTokenAuthCreateNativeUsers < ActiveRecord::Migration[6.1]
 
       ## User Info
       t.string :name
+      t.string :one_signal_player_id
       t.string :nickname
       t.string :image
       t.string :email, null: false, default: ''
       t.boolean :admin
 
       ## Tokens
-      t.text :tokens
+      t.json :tokens
 
       t.timestamps
     end

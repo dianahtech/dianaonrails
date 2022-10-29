@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2022_10_28_030032) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.float "weight"
@@ -40,11 +43,12 @@ ActiveRecord::Schema.define(version: 2022_10_28_030032) do
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
     t.string "name"
+    t.string "one_signal_player_id"
     t.string "nickname"
     t.string "image"
     t.string "email", default: "", null: false
     t.boolean "admin"
-    t.text "tokens"
+    t.json "tokens"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["confirmation_token"], name: "index_native_users_on_confirmation_token", unique: true

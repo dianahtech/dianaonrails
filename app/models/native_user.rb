@@ -2,11 +2,10 @@
 
 class NativeUser < ActiveRecord::Base
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable,  :trackable,
   devise :database_authenticatable, 
          :registerable,
-         :confirmable,
-         :trackable,
+         :confirmable,        
          :recoverable, 
          :rememberable, 
          :validatable
