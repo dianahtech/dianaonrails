@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-    mount_devise_token_auth_for 'NativeUser', at: 'native'
-  
-    devise_for :users
+
+   devise_for :users
+
+   
+   mount_devise_token_auth_for 'NativeUser', at: 'native'
+      
     resources :items  
     resources :ordered_item
     get 'home/about'

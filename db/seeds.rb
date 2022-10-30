@@ -5,24 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Item.create([{ name: 'ABACAXI PEROLA',weight:1,value:3.5, avaiable: true, durl: "https://firebasestorage.googleapis.com/v0/b/project-482087131936180168.appspot.com/o/cmtimg%2F0000000010443.png?alt=media&token=bfb1ac51-85be-4971-b475-662499671e9b", ean:'tes123tedeean', offer: false,buy_limit: 50, user_id: 1, section: 'amarela'}])
 
-=begin Item.create([{ name: 'ABACAXI PEROLA',weight:1,value:3.5, avaiable: true, durl: "https://firebasestorage.googleapis.com/v0/b/project-482087131936180168.appspot.com/o/cmtimg%2F0000000010443.png?alt=media&token=bfb1ac51-85be-4971-b475-662499671e9b", ean:'tes123tedeean', offer: false,buy_limit: 50, user_id: 1}])
+Item.create([{ name: 'AMEIXA FRESCA',weight:1,value:3.5, avaiable: true, durl: "https://firebasestorage.googleapis.com/v0/b/project-482087131936180168.appspot.com/o/fgopimg%2F0000000001681.png?alt=media&token=07a5b800-41e0-4b31-aa8a-bfd82d974706", ean:'tes123tedeean', offer: true,buy_limit: 100, user_id: 1, section: 'vermelha'}])
 
-Item.create([{ name: 'AMEIXA FRESCA',weight:1,value:3.5, avaiable: true, durl: "https://firebasestorage.googleapis.com/v0/b/project-482087131936180168.appspot.com/o/fgopimg%2F0000000001681.png?alt=media&token=07a5b800-41e0-4b31-aa8a-bfd82d974706", ean:'tes123tedeean', offer: true,buy_limit: 100, user_id: 2}])
+Item.create([{ name: 'ABACAXI PEROLA',weight:1,value:3.5, avaiable: true, durl: "https://firebasestorage.googleapis.com/v0/b/project-482087131936180168.appspot.com/o/cmtimg%2F0000000010443.png?alt=media&token=bfb1ac51-85be-4971-b475-662499671e9b", ean:'tes123tedeean', offer: false,buy_limit: 50, user_id: 1, section: 'amarela'}])
 
+Item.create([{ name: 'AMEIXA FRESCA',weight:1,value:3.5, avaiable: true, durl: "https://firebasestorage.googleapis.com/v0/b/project-482087131936180168.appspot.com/o/fgopimg%2F0000000001681.png?alt=media&token=07a5b800-41e0-4b31-aa8a-bfd82d974706", ean:'tes123tedeean', offer: true,buy_limit: 100, user_id: 1, section: 'vermelha'}])
 
-Item.create([{ name: 'ABACAXI PEROLA',weight:1,value:3.5, avaiable: true, durl: "https://firebasestorage.googleapis.com/v0/b/project-482087131936180168.appspot.com/o/cmtimg%2F0000000010443.png?alt=media&token=bfb1ac51-85be-4971-b475-662499671e9b", ean:'tes123tedeean', offer: false,buy_limit: 50, user_id: 1}])
-
-Item.create([{ name: 'AMEIXA FRESCA',weight:1,value:3.5, avaiable: true, durl: "https://firebasestorage.googleapis.com/v0/b/project-482087131936180168.appspot.com/o/fgopimg%2F0000000001681.png?alt=media&token=07a5b800-41e0-4b31-aa8a-bfd82d974706", ean:'tes123tedeean', offer: true,buy_limit: 100, user_id: 2}])
-
-Item.create([{ name: 'ABACAXI PEROLA',weight:1,value:3.5, avaiable: true, durl: "https://firebasestorage.googleapis.com/v0/b/project-482087131936180168.appspot.com/o/cmtimg%2F0000000010443.png?alt=media&token=bfb1ac51-85be-4971-b475-662499671e9b", ean:'tes123tedeean', offer: false,buy_limit: 50, user_id: 1}])
-
-Item.create([{ name: 'AMEIXA FRESCA',weight:1,value:3.5, avaiable: true, durl: "https://firebasestorage.googleapis.com/v0/b/project-482087131936180168.appspot.com/o/fgopimg%2F0000000001681.png?alt=media&token=07a5b800-41e0-4b31-aa8a-bfd82d974706", ean:'tes123tedeean', offer: true,buy_limit: 100, user_id: 2}])
-
-
-
-=end
-
- OrderedItem.create([{ status: 'Cancelado',date:'01/10/2022', final_value: 3.5, native_user_id: '4', store_id:'2'}])
- OrderedItem.create([{ status: 'Entregue',date:'10/05/2021', final_value: 3.5, native_user_id:'3', store_id:'4'}])
- OrderedItem.create([{ status: 'Finalizado',date:'26/06/2021', final_value: 3.5,native_user_id:'3', store_id:'4'}])

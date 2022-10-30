@@ -12,7 +12,7 @@
         <%= link_to 'Quem somos', home_about_path, class:"nav-link"%>        
         </li> 
 
-        <% if user_signed_in? %>
+       
         
         <li class="nav-item">
         <%= link_to 'Show Items', items_path, class:"nav-link"%>        
@@ -23,7 +23,7 @@
           </li>     
 
 
-      <% else %>
+  
 
         <li class="nav-item">
       <%= link_to 'Cadastrar', new_user_registration_path, class:"nav-link"%>        
@@ -33,7 +33,7 @@
       <%= link_to 'Entrar', new_user_session_path, class:"nav-link"%>        
         </li> 
 
-      <% end %>
+ 
 
       </ul>
 
