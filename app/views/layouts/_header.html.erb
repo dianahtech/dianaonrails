@@ -10,19 +10,20 @@
 
         <li class="nav-item">      
         <%= link_to 'Quem somos', home_about_path, class:"nav-link"%>        
-        </li> 
+        </li>
 
-       
-        
+        <% if user_signed_in? %>
+
         <li class="nav-item">
-        <%= link_to 'Show Items', items_path, class:"nav-link"%>        
-          </li>      
+          <%= link_to 'Tabela de Items', items_path, class:"nav-link"%>
+        </li>
+
 
           <li class="nav-item">
-        <%= link_to 'Sair', destroy_user_session_path, method: :delete, class:"nav-link"%>        
-          </li>     
+          <%= link_to 'Sair', destroy_user_session_path, method: :delete, class:"nav-link"%>
+        </li>
 
-
+        <% else %>
   
 
         <li class="nav-item">
@@ -31,7 +32,9 @@
 
         <li class="nav-item">
       <%= link_to 'Entrar', new_user_session_path, class:"nav-link"%>        
-        </li> 
+        </li>
+
+        <% end %>
 
  
 

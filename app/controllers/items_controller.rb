@@ -1,6 +1,13 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[ show edit update destroy ]
 
+  #Antes de autenticar deixa ele só ver index/show - Mas deixa guess e deletar
+  before_action :authenticate_user!, except: [:index, :show]
+
+
+  before_action :correct_user, only: [:edit, :update,:destroy]
+
+
   # GET /items or /items.json
   def index
     @items = Item.all
@@ -28,7 +35,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to item_url(@item), notice: "Item was successfully created." }
+        format.html { redirect_to item_url(@item), notice: "Item criado com sucesso." }
         format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -41,7 +48,7 @@ class ItemsController < ApplicationController
   def update
     respond_to do |format|
       if @item.update(item_params)
-        format.html { redirect_to item_url(@item), notice: "Item was successfully updated." }
+        format.html { redirect_to item_url(@item), notice: "Item atualizado com sucesso." }
         format.json { render :show, status: :ok, location: @item }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -55,9 +62,14 @@ class ItemsController < ApplicationController
     @item.destroy
 
     respond_to do |format|
-      format.html { redirect_to items_url, notice: "Item was successfully destroyed." }
+      format.html { redirect_to items_url, notice: "Item removido com sucesso." }
       format.json { head :no_content }
     end
+  end
+
+  def correct_user
+    @item = current_user.items.find_by(id: params[:id])
+    redirect_to items_path, notice: "Não autorizado a deletar produtos de outras pessoas." if @item.nil?
   end
 
   private
