@@ -6,6 +6,11 @@
  * Custom translucent site header
  */
 
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
 .site-header {
   color: #999;
   background-color: rgba(5,5,5,5);
