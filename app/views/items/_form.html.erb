@@ -1,8 +1,10 @@
+
+<div class="card-body" >
+
 <%= form_with(model: item) do |form| %>
   <% if item.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
-
       <ul>
         <% item.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,19 +13,19 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group mb-2">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class:"form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :weight %>
-    <%= form.text_field :weight %>
+    <%= form.text_field :weight,class:"form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :value %>
-    <%= form.text_field :value %>
+    <%= form.text_field :value,class:"form-control" %>
   </div>
 
   <div class="field">
@@ -33,41 +35,44 @@
 
   <div class="field">
     <%= form.label :durl %>
-    <%= form.text_field :durl %>
+    <%= form.text_field :durl, class:"form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :ean %>
-    <%= form.text_field :ean %>
+    <%= form.text_field :ean, class:"form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :offer %>
-    <%= form.check_box :offer %>
+    <%= form.check_box :offer%>
   </div>
 
   <div class="field">
     <%= form.label :buy_limit %>
-    <%= form.number_field :buy_limit %>
+    <%= form.number_field :buy_limit, class:"form-control"  %>
   </div>
 
   
   <div class="field">
     <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
+    <%= form.number_field :user_id, class:"form-control"  %>
   </div>
 
 
    <div class="field">
     <%= form.label :section %>
-    <%= form.text_field :section %>
+    <%= form.text_field :section, class:"form-control"  %>
   </div>
 
 
     <div class="field form-group">
     <%= form.number_field :user_id, id: :friend_user_id, class:"form-control",value:current_user.id, type: :hidden %>
   </div>
-  <div class="actions">
-    <%= form.submit %>
+
+  <div class="actions"  >
+    <%= form.submit  %>
   </div>
 <% end %>
+
+</div>

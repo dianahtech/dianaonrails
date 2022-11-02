@@ -1,44 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
 
-<p>
-  <strong>Name:</strong>
-  <%= @item.name %>
-</p>
+<div class="col-md-5 p-lg-4 mx-auto my-0">      
+<div class="card">
+<div class="card-header pt-2">
+<h2>Mostrar Item</h2>
+</div>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @item.weight %>
-</p>
+<% @item.attributes.each do |attr_name, attr_value| %>
+  <div>
+   <strong><%= attr_name %></strong>:<%= attr_value %>
+  </div>
+<% end %>
 
-<p>
-  <strong>Value:</strong>
-  <%= @item.value %>
-</p>
+<%= link_to 'Edit', edit_item_path(@item), class:"btn btn-secondary btn-lg btn-block mb-2"  %> 
+<%= link_to 'Back', items_path, class:"btn btn-secondary btn-lg btn-block"  %>
 
-<p>
-  <strong>Avaiable:</strong>
-  <%= @item.avaiable %>
-</p>
-
-<p>
-  <strong>Durl:</strong>
-  <%= @item.durl %>
-</p>
-
-<p>
-  <strong>Ean:</strong>
-  <%= @item.ean %>
-</p>
-
-<p>
-  <strong>Offer:</strong>
-  <%= @item.offer %>
-</p>
-
-<p>
-  <strong>Buy limit:</strong>
-  <%= @item.buy_limit %>
-</p>
-
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+</div>
+</div>
+</div>
+</div>
