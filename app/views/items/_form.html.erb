@@ -51,6 +51,22 @@
     <%= form.number_field :buy_limit %>
   </div>
 
+  
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+
+   <div class="field">
+    <%= form.label :section %>
+    <%= form.text_field :section %>
+  </div>
+
+
+    <div class="field form-group">
+    <%= form.number_field :user_id, id: :friend_user_id, class:"form-control",value:current_user.id, type: :hidden %>
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>

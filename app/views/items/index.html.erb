@@ -6,6 +6,7 @@
         <div class="col"></div>
         <div class="col-10 div.ex2">
 
+            <%= current_user.id %>>
            <h1 class="">Items</h1>
                 <table class="table table-bordered w-500">
                 <thead >
@@ -18,6 +19,8 @@
                 <th>Ean</th>
                 <th>Offer</th>
                 <th>Buy limit</th>
+                <th>User Id</th>
+                <th>Section</th>
                 <th colspan="3"></th>
                 </tr>
                 </thead>
@@ -50,6 +53,9 @@
                 <% end %>
 
                 <td><%= item.buy_limit %></td>
+                 <td><%= item.user_id %></td>
+                <td><%= item.section %></td>
+
                 <td><%= link_to 'Show', item %></td>
                 <td><%= link_to 'Edit', edit_item_path(item) %></td>
                 <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
