@@ -264,6 +264,7 @@ Devise.setup do |config|
   #
   # The "*/*" below is required to match Internet Explorer requests.
 
+  config.navigational_formats = ['*/*', :html, :json]
   #config.navigational_formats = [:json]
   # config.navigational_formats = ['*/*', :html]
 

@@ -9,11 +9,11 @@ Rails.application.routes.draw do
         constraints: ApiConstraints.new(version:1, default: true) do
         resources :items    
         resources :orders
+        mount_devise_token_auth_for 'NativeUser', at: 'native'      
       end
   end 
 
   devise_for :users   
-  mount_devise_token_auth_for 'NativeUser', at: 'native'      
   resources :items  
   resources :ordered_item
   get 'home/about'
