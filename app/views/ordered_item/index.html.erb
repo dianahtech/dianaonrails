@@ -1,0 +1,33 @@
+<%= stylesheet_link_tag "ordereditem" %>
+
+<div class="col">
+        <div class="col-10 divone">
+
+                <h1>Pedidos por data / por loja</h1>
+
+                <table class="table table-bordered tableLayout" >   
+                    <thead class="tbodyandhead" > 
+                                    <tr> 
+                                    <% item = @ordered_items.first  %> 
+                                    <% if item  %> 
+                                    <% item.attributes.each do |attr_name, attr_value| %>                                          
+                                    <th><%= attr_name %></th>
+                                    <% end %>
+                                    <% end %>
+                                    </tr>
+                    </thead>
+
+
+                    <tbody class="tbodyandhead">
+                                    <% @ordered_items.each do |item| %>
+                                    <tr> 
+                                    <% item.attributes.each do |attr_name, attr_value| %> 
+                                    <td class="td"><%= attr_value %></td>
+                                    <%end %>
+                                    </tr>
+                                    <%end %>
+                    </tbody>
+                </table>
+        </div> 
+</div>
+

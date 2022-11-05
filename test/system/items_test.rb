@@ -14,7 +14,7 @@ class ItemsTest < ApplicationSystemTestCase
     visit items_url
     click_on "New Item"
 
-    check "Avaiable" if @item.avaiable
+    check "Available" if @item.available
     fill_in "Buy limit", with: @item.buy_limit
     fill_in "Durl", with: @item.durl
     fill_in "Ean", with: @item.ean
@@ -32,7 +32,7 @@ class ItemsTest < ApplicationSystemTestCase
     visit items_url
     click_on "Edit", match: :first
 
-    check "Avaiable" if @item.avaiable
+    check "Available" if @item.available
     fill_in "Buy limit", with: @item.buy_limit
     fill_in "Durl", with: @item.durl
     fill_in "Ean", with: @item.ean

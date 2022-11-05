@@ -29,8 +29,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :avaiable %>
-    <%= form.check_box :avaiable %>
+    <%= form.label :available %>
+    <%= form.check_box :available %>
   </div>
 
   <div class="field">
@@ -51,28 +51,24 @@
   <div class="field">
     <%= form.label :buy_limit %>
     <%= form.number_field :buy_limit, class:"form-control"  %>
-  </div>
-
-  
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id, class:"form-control"  %>
-  </div>
-
+  </div> 
 
    <div class="field">
     <%= form.label :section %>
     <%= form.text_field :section, class:"form-control"  %>
   </div>
 
-
-    <div class="field form-group">
-    <%= form.number_field :user_id, id: :friend_user_id, class:"form-control",value:current_user.id, type: :hidden %>
+    <div class="field form-group">   
+    <%= form.number_field :store_id,  class:"form-control",value:current_store_user.id, type: :hidden  %>
+    <!--, type: :hidden -->
   </div>
+
 
   <div class="actions"  >
     <%= form.submit  %>
   </div>
+
+
 <% end %>
 
 </div>

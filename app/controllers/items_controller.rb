@@ -1,28 +1,24 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[ show edit update destroy ]
-
-  #Antes de autenticar deixa ele só ver index/show - Mas deixa guess e deletar
-  before_action :authenticate_user!, except: [:index, :show]
-
-
-  before_action :correct_user, only: [:edit, :update,:destroy, :show]
+  #before_action :authenticate_store_user!, except: [:index, :show]
+  #before_action :correct_user, only: [:edit, :update,:destroy, :show]
 
 
   # GET /items or /items.json
   def index
     #@items = Item.all
-    @items = Item.where(user_id:current_user.id)  
+    @items = Item.where(store_id:current_store_user.id)  
     
   end
 
   # GET /items/1 or /items/1.json
   def show    
-    item = Item.where(params[:user_id])    
+    item = Item.where(params[:store_id])    
   end
 
   # GET /items/new
   def new
-    #@item = current_user.items.build(item_params)
+    #@item = current_store_user.items.build(item_params)
     @item = Item.new
   end
 
@@ -32,9 +28,17 @@ class ItemsController < ApplicationController
 
   # POST /items or /items.json
   def create
-    #@item = Item.new(item_params)
+    logger.debug "The article was saved and now the user is going to be redirected..."
+    logger.debug "Valor do params: #{item_params}"
 
-    @item = current_user.items.build(item_params)
+
+    #@item = Item.new(item_params)
+    @itemr = current_store_user.items.build(item_params)
+
+    logger.debug "Valor do itemr: #{itemr}"
+
+
+
     respond_to do |format|
       if @item.save
         format.html { redirect_to item_url(@item), notice: "Item criado com sucesso." }
@@ -69,7 +73,7 @@ class ItemsController < ApplicationController
   end
 
   def correct_user
-    @item = current_user.items.find_by(id: params[:id])
+    @item = current_store_user.items.find_by(id: params[:id])
     redirect_to items_path, notice: "Não autorizado a deletar produtos de outras pessoas." if @item.nil?
   end
 
@@ -81,6 +85,6 @@ class ItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def item_params
-      params.require(:item).permit(:name, :weight, :value, :avaiable, :durl, :ean, :offer, :buy_limit, :user_id, :section)
+      params.require(:item).permit(:name, :weight, :value, :available, :durl, :ean, :offer, :buy_limit, :store_id, :section, :description)
     end
 end

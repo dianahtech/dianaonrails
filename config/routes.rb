@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       end
   end 
 
-  devise_for :users   
+  devise_for :store_users   
   resources :items  
   resources :ordered_item
   get 'home/about'

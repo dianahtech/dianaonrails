@@ -10,5 +10,5 @@ class NativeUser < ActiveRecord::Base
          :recoverable, 
          :rememberable, 
          :validatable
-  include DeviseTokenAuth::Concerns::User
+  #include DeviseTokenAuth::Concerns::User
 end

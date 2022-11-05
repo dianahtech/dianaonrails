@@ -6,7 +6,7 @@
         <div class="col"></div>
         <div class="col-10 div.ex2">
 
-            <%= current_user.id %>              
+            <%= current_store_user.id %>              
 
 
            <h1>Items</h1>
@@ -33,7 +33,7 @@
                 <% td_size = 100 / item.attributes.count  %>
                 <!-- 
                 ###Se quiser deixar a linha inteira vermelha, utilizar esse loop
-                        <% if item.avaiable and item.offer %>
+                        <% if item.available and item.offer %>
                                 <td class="table-success"><%= attr_value %></td>
                         <% else   %>
                                 <td class="table-danger"><%= attr_value %></td>
