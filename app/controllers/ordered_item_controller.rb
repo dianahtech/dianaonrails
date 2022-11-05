@@ -31,7 +31,7 @@ class OrderedItemController < ApplicationController
 
     private
     def ordered_params
-        params.permit(:status,:final_value,:date,:native_user_id,:store_id)
+        params.permit(:status,:final_value,:native_user_id,:store_id,:payment_mode,items:{})
     end
 
 

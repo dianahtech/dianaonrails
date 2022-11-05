@@ -9,7 +9,7 @@ class CreateItems < ActiveRecord::Migration[6.1]
       t.string :ean
       t.boolean :offer
       t.integer :buy_limit
-
+      
       t.timestamps
     end
   end

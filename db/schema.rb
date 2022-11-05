@@ -60,10 +60,11 @@ ActiveRecord::Schema.define(version: 2022_10_30_032940) do
 
   create_table "ordered_items", force: :cascade do |t|
     t.string "status"
-    t.string "date"
     t.string "final_value"
+    t.string "payment_mode"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.json "items"
     t.integer "native_user_id"
     t.integer "store_id"
     t.index ["native_user_id"], name: "index_ordered_items_on_native_user_id"

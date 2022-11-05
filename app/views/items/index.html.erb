@@ -14,8 +14,10 @@
                         <thead >
                                 <tr>
                                         <% item = @items.first  %> 
+                                        <% if item  %> 
                                         <% item.attributes.each do |attr_name, attr_value| %> 
                                         <th><%= attr_name %></th>
+                                        <% end %>
                                         <% end %>
                                         <th colspan="6"></th>
                                 </tr>
