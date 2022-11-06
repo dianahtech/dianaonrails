@@ -1,5 +1,5 @@
 
-class Api::V1::OrdersController < ApplicationController
+class Api::V1::OrdersController < ApplicationController::API
   # GET /items or /items.json
   def index
     render json: {status: 'SUCCESS', message: 'Ordens encontradas'}, status: :ok

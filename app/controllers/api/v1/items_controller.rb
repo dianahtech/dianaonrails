@@ -1,4 +1,4 @@
-class Api::V1::ItemsController < ApplicationController
+class Api::V1::ItemsController < ApplicationController::API
   # GET /items or /items.json
   def index
     @items = Item.all  
