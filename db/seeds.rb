@@ -22,5 +22,9 @@ Item.create([{ name: 'REFRIG FANTA KS 290ML LARANJA', description:'Mais um refri
 ###Criação de pedido associando loja 1 x user 1
 OrderedItem.create({native_user_id:1, store_user_id:1,final_value:123,items: {id: "3",name: "REFRIG COCA COLA KS 290ML"}, payment_mode:"Credito card X/Y/Z",status:"enviado"})
 
+OrderedItem.create({native_user_id:7, store_user_id:1,final_value:123,items: {id: "3",name: "REFRIG COCA COLA KS 290ML"}, payment_mode:"Credito card X/Y/Z",status:"enviado"})
+
+
+OrderedItem.create({native_user_id:7, store_user_id:1,final_value:123,items: {id: "3",name: "REFRIG COCA COLA KS 290ML"}, payment_mode:"Credito card X/Y/Z",status:"enviado"})
 
 
