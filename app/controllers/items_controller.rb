@@ -1,43 +1,35 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[ show edit update destroy ]
-  #before_action :authenticate_store_user!, except: [:index, :show]
-  #before_action :correct_user, only: [:edit, :update,:destroy, :show]
+  before_action :authenticate_store_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update,:destroy, :show]
 
 
-  # GET /items or /items.json
-  def index
-    #@items = Item.all
-    @items = Item.where(store_id:current_store_user.id)  
+  
+  def index    
+    @items = Item.where(store_user_id:current_store_user.id)  
     
   end
 
-  # GET /items/1 or /items/1.json
   def show    
-    item = Item.where(params[:store_id])    
+    item = Item.where(params[:store_user_id])    
   end
 
-  # GET /items/new
-  def new
-    #@item = current_store_user.items.build(item_params)
+
+  def new 
     @item = Item.new
   end
 
-  # GET /items/1/edit
+
   def edit
   end
 
-  # POST /items or /items.json
+
   def create
     logger.debug "The article was saved and now the user is going to be redirected..."
-    logger.debug "Valor do params: #{item_params}"
+    logger.debug "currentStoreUser: #{item_params}"
 
-
-    #@item = Item.new(item_params)
-    @itemr = current_store_user.items.build(item_params)
-
-    logger.debug "Valor do itemr: #{itemr}"
-
-
+ 
+    @item = current_store_user.items.build(item_params) 
 
     respond_to do |format|
       if @item.save
@@ -50,7 +42,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /items/1 or /items/1.json
   def update
     respond_to do |format|
       if @item.update(item_params)
@@ -63,7 +54,7 @@ class ItemsController < ApplicationController
     end
   end
 
-  # DELETE /items/1 or /items/1.json
+
   def destroy
     @item.destroy
     respond_to do |format|
@@ -85,6 +76,6 @@ class ItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def item_params
-      params.require(:item).permit(:name, :weight, :value, :available, :durl, :ean, :offer, :buy_limit, :store_id, :section, :description)
+      params.require(:item).permit(:name, :weight, :value, :available, :durl, :ean, :offer, :buy_limit, :store_user_id, :section, :description)
     end
 end

@@ -2,25 +2,18 @@ class OrderedItemController < ApplicationController
     #before_action :set_item, only: %i[ show edit update destroy ]
     #protect_from_forgery with: :null_session
 
-    def index   
-        @ordered_items = OrderedItem.all
-        #@ordered_items = Item.where(user_id:current_store_user.id)   
-        #ordered_items = OrderedItem.order('created_at DESC')
-        #render json: {status: 'SUCCESS', message:'Pedidos Carregados', data: ordered_items}, status: :ok
+    def index         
+        @ordered_items = OrderedItem.where(store_user_id:current_store_user.id)   
+        #ordered_items = OrderedItem.order('created_at DESC')     
     end  
 
-    # GET /items/1 or /items/1.json
     def show
-        ordered_items = OrderedItem.where(store_id: params[:id])
-        render json: {status: 'SUCCESS', message: 'Pedidos encontrados', data: ordered_items}, status: :ok
-    end
-
-
-
-    def about
+        @ordered_items = OrderedItem.where(store_user_id: params[:id])
+        #render json: {status: 'SUCCESS', message: 'Pedidos encontrados', data: ordered_items}, status: :ok
     end
 
     def create
+        logger.debug "ordered_params: #{ordered_params}"
         ordered_item = OrderedItem.new(ordered_params)
 
         if ordered_item.save
@@ -34,7 +27,7 @@ class OrderedItemController < ApplicationController
 
     private
     def ordered_params
-        params.permit(:status,:final_value,:native_user_id,:store_id,:payment_mode,items:{})
+        params.require(:ordered_item).permit(:status,:final_value,:native_user_id,:store_user_id,:payment_mode,items:{})
     end
 
 

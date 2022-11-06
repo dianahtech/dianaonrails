@@ -1,63 +1,64 @@
-<%= stylesheet_link_tag "items" %>
+<%= stylesheet_link_tag "ordereditem" %>
+                
 
-<div class="container-fluid mx-auto text-center m-1"> 
-<div class="row my-3"></div>
-<div class="row">
-        <div class="col"></div>
-        <div class="col-10 div.ex2">
+        <div class="divcontain">     
+                <div class="row">
+                <h6>Usuario Logado:</h6> <%= current_store_user.id %>
+                </div>
 
-            <%= current_store_user.id %>              
+                <h1>Items</h1>
 
-
-           <h1>Items</h1>
-                <table class="table table-bordered w-500">
-                        <thead >
-                                <tr>
+                <table class="table table-bordered tableLayout">
+                                <thead class="tbodyandhead">
+                                        <tr>
                                         <% item = @items.first  %> 
                                         <% if item  %> 
                                         <% item.attributes.each do |attr_name, attr_value| %> 
                                         <th><%= attr_name %></th>
                                         <% end %>
+                                        <% end %>                                        
+                                        </tr>
+                                </thead>
+
+                                <tbody class="tbodyandhead">
+
+                                        <% @items.each do |item| %>
+
+                                        <tr>
+
+                                        <% item.attributes.each do |attr_name, attr_value| %> 
+                                        <% td_size = 100 / item.attributes.count  %>
+                                        
+                                        <!-- 
+                                        ###Se quiser deixar a linha inteira vermelha, utilizar esse loop
+                                        <% if item.available and item.offer %>
+                                        <td class="table-success"><%= attr_value %></td>
+                                        <% else   %>
+                                        <td class="table-danger"><%= attr_value %></td>
+                                        <% end %>   
+                                        -->
+
+
+                                        <% if attr_name === "durl" %>
+                                        <td   class="table-success "><p>Imagem</p></td>
+                                        <% elsif attr_value === false %>
+                                        <td   class="table-danger "><%= attr_value %></td>
+                                        <% else   %>
+                                        <td   class="table-success "><%= attr_value %></td>
+                                        <% end %>  
                                         <% end %>
-                                        <th colspan="6"></th>
-                                </tr>
-                        </thead>
+                                        <td><%= link_to 'Edit', edit_item_path(item) %></td>
+                                      
+                                        </tr>
+                                        <% end %>
 
-                <tbody>
-
-                <% @items.each do |item| %>
-
-                <tr>
-
-                <% item.attributes.each do |attr_name, attr_value| %> 
-                <% td_size = 100 / item.attributes.count  %>
-                <!-- 
-                ###Se quiser deixar a linha inteira vermelha, utilizar esse loop
-                        <% if item.available and item.offer %>
-                                <td class="table-success"><%= attr_value %></td>
-                        <% else   %>
-                                <td class="table-danger"><%= attr_value %></td>
-                        <% end %>   
-                -->
-
-                <!-- Essa sintaxe abaixo deixa somente o campo vermelho quando o attribute for false -->
-                        <% if attr_value === false %>
-                                <td   class="table-danger"><%= attr_value %></td>
-                        <% else   %>
-                                <td   class="table-success"><%= attr_value %></td>
-                        <% end %>  
-                <% end %>   
-
-                <td><%= link_to 'Show', item %></td>
-                <td><%= link_to 'Edit', edit_item_path(item) %></td>
-                <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                </tr>
-                <% end %>
-
-                </tbody>
+                                </tbody>
                 </table>
                 <%= link_to 'ADICIONAR ITEM', new_item_path, class:"btn btn-secondary" %>
+
         </div>
-        <div class="col"></div> 
-</div>
-</div>
+  
+
+
+
+

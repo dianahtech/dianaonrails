@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 2022_10_29_212607) do
     t.boolean "available"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "store_id"
-    t.index ["store_id"], name: "index_items_on_store_id"
+    t.integer "store_user_id"
+    t.index ["store_user_id"], name: "index_items_on_store_user_id"
   end
 
   create_table "native_users", force: :cascade do |t|
@@ -63,13 +63,13 @@ ActiveRecord::Schema.define(version: 2022_10_29_212607) do
     t.string "status"
     t.string "final_value"
     t.string "payment_mode"
+    t.json "items"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.json "items"
     t.integer "native_user_id"
-    t.integer "store_id"
+    t.integer "store_user_id"
     t.index ["native_user_id"], name: "index_ordered_items_on_native_user_id"
-    t.index ["store_id"], name: "index_ordered_items_on_store_id"
+    t.index ["store_user_id"], name: "index_ordered_items_on_store_user_id"
   end
 
   create_table "store_users", force: :cascade do |t|

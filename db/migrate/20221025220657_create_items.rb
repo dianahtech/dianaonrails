@@ -11,8 +11,6 @@ class CreateItems < ActiveRecord::Migration[6.1]
       t.integer :buy_limit
       t.boolean :offer
       t.boolean :available
-
-
       
       t.timestamps
     end
