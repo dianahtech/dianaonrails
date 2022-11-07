@@ -1,7 +1,6 @@
 .container {
     background-color: rgb(104, 190, 190);
     margin: auto;
-    margin: 30px;
     border-radius: 10px;
 }
 
@@ -14,5 +13,7 @@ td {
 table {
     width: 100%;
     border-collapse: collapse;
-
+    border-radius: 3px;
+    border-width: 3px;
+    table-layout: fixed;
 }

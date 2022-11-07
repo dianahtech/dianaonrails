@@ -1,13 +1,28 @@
 import React from "react";
-const ReadOnlyRow =({product}) => { 
+const ReadOnlyRow =({product}) => {
+
+  
+
+
+  const ObjecValues = (Object.values(product))
+  let conditionalBodyRendering;  
+
+
+  conditionalBodyRendering = ObjecValues.map((item) =>{  
+    if (typeof item==="object"){  
+      let stringfy = JSON.stringify(item)
+      return <td><div style={{height:40, overFlow:"hidden"}}> {stringfy}</div></td>     
+    } else{
+      return <td> <div style={{height:40, overFlow:"hidden"}}>{item}</div></td>
+    }
+  }) 
 
 
 
- 
   return (
-   /*  <tr>
-    <td>{product.id}</td>
-    <td>{product.name}</td>    
+   
+     <tr>
+          {conditionalBodyRendering} 
     <td>
       <button
         type="button"
@@ -19,16 +34,14 @@ const ReadOnlyRow =({product}) => {
         Deletar
       </button>
     </td>
-  </tr> */
+
+  </tr>  
 
 
-
-
-
-
-
-    <tr>
-      <td>{product.id}</td>
+     
+ /*  <tr>
+        <td>{product.id}</td>
+      
       <td>{product.status}</td>
       <td>{product.payment_mode}</td>
       <td>{product.final_value}</td> 
@@ -50,8 +63,8 @@ const ReadOnlyRow =({product}) => {
         <button type="button" onClick={()=>{}}>
           Deletar
         </button>
-      </td>
-    </tr> 
+      </td> 
+    </tr>  */
   );
 };
 

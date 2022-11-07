@@ -1,12 +1,17 @@
 .tableContainer {
     background: rgb(104, 190, 190);
     flex: 1;
+    text-align: center;
 }
 
 .separator {
-    background: rgb(104, 190, 190);
     height: 30px;
+}
 
+.card {
+    background: #ffffff;
+    max-width: 80%;
+    margin: auto;
 }
 
 .tableLayout {
