@@ -1,13 +1,22 @@
-<%= stylesheet_link_tag "ordereditem" %>
+<%= stylesheet_link_tag "items" %>
                 
 
-        <div class="divcontain">     
-                <div class="row">
-                <h6>Usuario Logado:</h6> <%= current_store_user.id %>
+<div class="tableContainer"> 
+        <div>  
+                <div>
+                <h1>Items</h1>
                 </div>
 
-                <h1>Items</h1>
+                <div>
+                <% products = @items.as_json %>
+                <%= react_component("table/Table", {products: products}) %>
+                </div>
 
+
+
+
+                
+                <div>
                 <table class="table table-bordered tableLayout">
                                 <thead class="tbodyandhead">
                                         <tr>
@@ -48,16 +57,19 @@
                                         <% end %>  
                                         <% end %>
                                         <td><%= link_to 'Edit', edit_item_path(item) %></td>
-                                      
+                                
                                         </tr>
                                         <% end %>
 
                                 </tbody>
                 </table>
                 <%= link_to 'ADICIONAR ITEM', new_item_path, class:"btn btn-secondary" %>
+                </div>
 
-        </div>
-  
+        </div>  
+
+</div>
+
 
 
 

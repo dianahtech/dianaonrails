@@ -1,27 +1,32 @@
-.divcontain {
-  flex-direction: row;
+.tableContainer {
+  background: rgb(104, 190, 190);
+  flex: 1;
 }
 
+.separator {
+  background: rgb(104, 190, 190);
+  height: 30px;
 
-.divone {
-  width: 90%;
-  margin: auto;
-  border: 3px solid #73AD21;
 }
-
 
 .tableLayout {
-  table-layout: fixed;
-  max-width: 90%;
+  border-radius: 10px;
+  max-width: 80%;
+  background: #ffffff;
   margin: auto;
-  border: 3px solid #73AD21;
+  border: 3px solid #000000;
+  padding: 20px;
+
 }
 
-.tbodyandhead {
-  width: 500;
-}
+.tableDiv {
+  border-radius: 10px;
+  max-width: 90%;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 10px solid #0000004b;
+  text-align: center;
 
-
-.td {
-  max-width: 10%;
 }

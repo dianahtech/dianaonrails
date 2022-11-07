@@ -1,12 +1,22 @@
 <%= stylesheet_link_tag "ordereditem" %>
 
-<div class="col">
-        <div class="col-10 divone">
+<div class="tableContainer">
+        <div class="separator"></div>
 
-                <h1>Pedidos por data / por loja</h1>
+        <div class="tableLayout">                
 
-                <table class="table table-bordered tableLayout" >   
-                    <thead class="tbodyandhead" > 
+                <div class="tableDiv">
+                <h1>Pedidos</h1>
+                </div>                
+
+                <div class="tableDiv">
+                <% products = @ordered_items.as_json %>                              
+                <%= react_component("table/Table", {products: products}) %>
+                </div>
+
+                <div>
+                <table class="table table-bordered tableDiv" >   
+                    <thead> 
                                     <tr> 
                                     <% item = @ordered_items.first  %> 
                                     <% if item  %> 
@@ -18,7 +28,7 @@
                     </thead>
 
 
-                    <tbody class="tbodyandhead">
+                    <tbody>
                                     <% @ordered_items.each do |item| %>
                                     <tr> 
                                     <% item.attributes.each do |attr_name, attr_value| %> 
@@ -28,6 +38,7 @@
                                     <%end %>
                     </tbody>
                 </table>
+                </div>
         </div> 
 </div>
 

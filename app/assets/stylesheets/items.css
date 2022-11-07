@@ -1,0 +1,32 @@
+.tableContainer {
+    background: rgb(104, 190, 190);
+    flex: 1;
+}
+
+.separator {
+    background: rgb(104, 190, 190);
+    height: 30px;
+
+}
+
+.tableLayout {
+    border-radius: 10px;
+    max-width: 80%;
+    background: #ffffff;
+    margin: auto;
+    border: 3px solid #000000;
+    padding: 20px;
+
+}
+
+.tableDiv {
+    border-radius: 10px;
+    max-width: 90%;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px solid #0000004b;
+    text-align: center;
+
+}
